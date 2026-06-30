@@ -68,9 +68,7 @@ To manage the multi-asset risk, we implemented an asymmetric pricing model that 
     $$r = \text{mid} - q \cdot \gamma \cdot (\sigma^2 + \text{TICK})$$
 * **Dynamic Half-Spread ($h$):** The spread widened or narrowed dynamically to balance competitive execution with a strict risk premium based on market volatility and position distress:
     $$h = \max(h_{min}, h_{base} + k_{vol} \cdot \sigma + \gamma \cdot |q| \cdot \text{TICK})$$
-* **Theoretical Boundaries:** This established our ideal target bounds, defining the absolute worst prices we would accept for a bid ($P_{bid}^*$) or ask ($P_{ask}^*$):
-    $$P_{bid}^* = r - h$$
-    $$P_{ask}^* = r + h$$
+* **Theoretical Boundaries:** This established our ideal target bounds, defining the absolute worst prices we would accept for a bid ($P_{bid}^*$) or ask ($P_{ask}^*$): $P_{bid}^* = r - h$ and $P_{ask}^* = r + h$
 
 ### 3. The Pennying & Priority Execution Engine
 To outcompete other teams on execution speed and queue priority, the strategy actively monitored the public best bid ($B_{public}$) and best ask ($A_{public}$). 
